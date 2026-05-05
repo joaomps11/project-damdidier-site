@@ -18,19 +18,24 @@ export default function Sobre() {
 
         <section className="section">
           <div className="container">
-            <h2>Quem somos</h2>
-            <p className="section-text">
-              A Damdidier atua no segmento de seguros e benefícios corporativos,
-              oferecendo atendimento consultivo para pessoas, famílias e
-              empresas que buscam proteção, tranquilidade e soluções adequadas
-              às suas necessidades.
-            </p>
+<h2>Quem somos</h2>
 
-            <p className="section-text">
-              Nosso objetivo é simplificar o processo de escolha e contratação
-              de seguros, aproximando o cliente das melhores alternativas do
-              mercado com clareza, responsabilidade e suporte especializado.
-            </p>
+<p className="section-text">
+  A Damdidier é uma empresa especializada em seguros e benefícios,
+  oferecendo soluções personalizadas para pessoas, famílias e empresas.
+</p>
+
+<p className="section-text">
+  Trabalhamos com atendimento consultivo para ajudar cada cliente a
+  encontrar a proteção mais adequada para sua realidade, sempre buscando
+  praticidade, transparência e suporte durante todo o processo.
+</p>
+
+<p className="section-text">
+  Nosso compromisso é tornar a contratação de seguros mais simples,
+  acessível e segura, conectando nossos clientes às melhores alternativas
+  disponíveis no mercado.
+</p>
           </div>
         </section>
 
