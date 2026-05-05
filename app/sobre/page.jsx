@@ -18,7 +18,7 @@ export default function Sobre() {
 
         <section className="section">
           <div className="container">
-            <h2>Nossa história</h2>
+            <h2>Quem somos</h2>
             <p className="section-text">
               A Damdidier atua no segmento de seguros e benefícios corporativos,
               oferecendo atendimento consultivo para pessoas, famílias e
