@@ -6,10 +6,11 @@ export default function Header() {
       <div className="container nav">
         <Link href="/" className="logo">
           <span>D</span>
-          Damdidier
+          <strong>Damdidier</strong>
         </Link>
 
         <nav className="menu">
+          <Link href="/">Início</Link>
           <Link href="/seguros">Seguros</Link>
           <Link href="/sobre">Sobre</Link>
           <Link href="/cotacao">Contato</Link>
