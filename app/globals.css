@@ -495,13 +495,14 @@ a {
 .footer {
   background: #08245c;
   color: #ffffff;
-  padding: 45px 0 20px;
+  padding: 60px 0 25px;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
   gap: 30px;
+  align-items: start;
 }
 
 .footer h3,
@@ -553,6 +554,8 @@ a {
 
   .section h2 {
     font-size: 28px;
+    font-weight: 800;
+line-height: 1.15;
   }
 
   .nav .btn-yellow {
