@@ -24,13 +24,24 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="quote-box">
-              <h3>Faça sua cotação agora</h3>
-              <p>Receba uma proposta personalizada com nossa equipe.</p>
-              <Link href="/cotacao" className="btn-yellow full">
-                Solicitar cotação grátis
-              </Link>
-            </div>
+<div className="hero-visual">
+  <img
+    src="/imagens/hero-seguros.jpg"
+    alt="Proteção e segurança familiar"
+  />
+
+  <div className="quote-box floating">
+    <h3>Faça sua cotação agora</h3>
+
+    <p>
+      Receba uma proposta personalizada com atendimento rápido e especializado.
+    </p>
+
+    <Link href="/cotacao" className="btn-yellow full">
+      Solicitar cotação grátis
+    </Link>
+  </div>
+</div>
           </div>
         </section>
 
