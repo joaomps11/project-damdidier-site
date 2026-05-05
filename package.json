@@ -1,5 +1,5 @@
 {
-  "name": "damdidier-site",
+  "name": "project-damdidier-site",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "14.2.5",
+    "next": "14.2.24",
     "react": "^18",
     "react-dom": "^18"
   }
