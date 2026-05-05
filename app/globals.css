@@ -509,6 +509,44 @@ a {
   margin-top: 0;
 }
 
+/* efeitos hover */
+.card {
+ ...
+}
+
+.card:hover {
+ ...
+}
+
+/* alinhamento dos cards */
+.cards {
+  align-items: stretch;
+}
+
+.card {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card p {
+  flex: 1;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card .small-btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@media (max-width: 900px) {
+ ...
+}
+
 @media (max-width: 900px) {
   .menu {
     display: none;
