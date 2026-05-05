@@ -574,6 +574,28 @@ pointer-events: none;
   margin-bottom: 18px;
 }
 
+.service-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.service-icon {
+  font-size: 22px;
+  color: #ffc20e;
+  background: rgba(255, 194, 14, 0.12);
+  padding: 10px;
+  border-radius: 12px;
+  min-width: 44px;
+  min-height: 44px;
+  transition: 0.25s;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.08);
+}
+
 @media (max-width: 900px) {
 
 .hero-visual {
