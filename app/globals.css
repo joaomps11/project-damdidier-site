@@ -23,8 +23,12 @@ a {
 }
 
 .header {
-  background: #08245c;
+  background: rgba(8, 36, 92, 0.96);
   padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
 }
 
 .nav {
