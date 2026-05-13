@@ -1,8 +1,68 @@
+"use client";
+
+import { useState } from "react";
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import WhatsAppButton from "../../components/WhatsAppButton";
 
 export default function Cotacao() {
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    telefone: "",
+    empresa: "",
+    servico: "Seguro de Vida",
+    mensagem: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  function handleChange(e) {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/cotacao", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Cotação enviada com sucesso!");
+
+        setFormData({
+          nome: "",
+          email: "",
+          telefone: "",
+          empresa: "",
+          servico: "Seguro de Vida",
+          mensagem: "",
+        });
+      } else {
+        alert("Erro ao enviar cotação.");
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Erro ao enviar cotação.");
+    }
+
+    setLoading(false);
+  }
+
   return (
     <>
       <Header />
@@ -21,30 +81,61 @@ export default function Cotacao() {
               <h2>Solicitar cotação</h2>
               <p>Campos marcados com * são obrigatórios.</p>
 
-              <form className="form">
+              <form className="form" onSubmit={handleSubmit}>
                 <label>
                   Nome completo *
-                  <input type="text" placeholder="Digite seu nome" />
+                  <input
+                    type="text"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    value={formData.nome}
+                    onChange={handleChange}
+                    required
+                  />
                 </label>
 
                 <label>
                   E-mail *
-                  <input type="email" placeholder="seu@email.com" />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="seu@email.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
                 </label>
 
                 <label>
                   Telefone / WhatsApp *
-                  <input type="text" placeholder="(81) 99999-0000" />
+                  <input
+                    type="text"
+                    name="telefone"
+                    placeholder="(81) 99999-0000"
+                    value={formData.telefone}
+                    onChange={handleChange}
+                    required
+                  />
                 </label>
 
                 <label>
                   Empresa
-                  <input type="text" placeholder="Nome da empresa" />
+                  <input
+                    type="text"
+                    name="empresa"
+                    placeholder="Nome da empresa"
+                    value={formData.empresa}
+                    onChange={handleChange}
+                  />
                 </label>
 
                 <label>
                   Tipo de serviço *
-                  <select>
+                  <select
+                    name="servico"
+                    value={formData.servico}
+                    onChange={handleChange}
+                  >
                     <option>Seguro de Vida</option>
                     <option>Saúde Empresarial</option>
                     <option>Seguro Auto</option>
@@ -54,10 +145,19 @@ export default function Cotacao() {
 
                 <label>
                   Mensagem
-                  <textarea placeholder="Descreva sua necessidade"></textarea>
+                  <textarea
+                    name="mensagem"
+                    placeholder="Descreva sua necessidade"
+                    value={formData.mensagem}
+                    onChange={handleChange}
+                  ></textarea>
                 </label>
 
-                <button type="button">Receber cotação gratuitamente</button>
+                <button type="submit" disabled={loading}>
+                  {loading
+                    ? "Enviando..."
+                    : "Receber cotação gratuitamente"}
+                </button>
               </form>
             </div>
 
